@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="If5-lB-Xqu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="If5-lB-Xqu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -354,19 +354,19 @@
                                                     <rect key="frame" x="200" y="15" width="165" height="124.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fe5-qG-RcR">
-                                                            <rect key="frame" x="5" y="5" width="155" height="20"/>
+                                                            <rect key="frame" x="10" y="5" width="150" height="50"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="VWU-SQ-CsZ"/>
+                                                                <constraint firstAttribute="height" constant="50" id="4Lq-Po-k2r"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRP-0a-mi2">
-                                                            <rect key="frame" x="10" y="99.5" width="150" height="20"/>
+                                                            <rect key="frame" x="5" y="99.5" width="155" height="20"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Đăng ký" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOR-T3-x91">
-                                                                    <rect key="frame" x="25" y="0.0" width="125" height="20"/>
+                                                                    <rect key="frame" x="25" y="0.0" width="130" height="20"/>
                                                                     <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
                                                                     <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -392,15 +392,25 @@
                                                                 <constraint firstAttribute="trailing" secondItem="rOR-T3-x91" secondAttribute="trailing" id="wft-lr-TpU"/>
                                                             </constraints>
                                                         </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Việt Nam Esport TV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lR5-Ly-64z">
+                                                            <rect key="frame" x="10" y="60" width="150" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="Fe5-qG-RcR" secondAttribute="trailing" constant="5" id="89A-OA-hN8"/>
-                                                        <constraint firstItem="Fe5-qG-RcR" firstAttribute="leading" secondItem="MWj-xA-MFN" secondAttribute="leading" constant="5" id="khe-C6-8hE"/>
+                                                        <constraint firstItem="IRP-0a-mi2" firstAttribute="top" secondItem="lR5-Ly-64z" secondAttribute="bottom" constant="15.5" id="4x2-tX-sz2"/>
+                                                        <constraint firstItem="lR5-Ly-64z" firstAttribute="leading" secondItem="MWj-xA-MFN" secondAttribute="leading" constant="10" id="C6A-zy-FUA"/>
+                                                        <constraint firstItem="Fe5-qG-RcR" firstAttribute="leading" secondItem="MWj-xA-MFN" secondAttribute="leading" constant="10" id="P16-8P-T6j"/>
+                                                        <constraint firstItem="Fe5-qG-RcR" firstAttribute="top" secondItem="MWj-xA-MFN" secondAttribute="top" constant="5" id="apb-gf-wYf"/>
                                                         <constraint firstAttribute="trailing" secondItem="IRP-0a-mi2" secondAttribute="trailing" constant="5" id="oqo-sr-vak"/>
+                                                        <constraint firstAttribute="trailing" secondItem="lR5-Ly-64z" secondAttribute="trailing" constant="5" id="pDa-1f-TcT"/>
                                                         <constraint firstAttribute="bottom" secondItem="IRP-0a-mi2" secondAttribute="bottom" constant="5" id="qin-p2-Sp0"/>
-                                                        <constraint firstItem="IRP-0a-mi2" firstAttribute="leading" secondItem="MWj-xA-MFN" secondAttribute="leading" constant="10" id="sDY-Fc-GjA"/>
-                                                        <constraint firstItem="Fe5-qG-RcR" firstAttribute="top" secondItem="MWj-xA-MFN" secondAttribute="top" constant="5" id="tf5-Db-y9X"/>
+                                                        <constraint firstItem="IRP-0a-mi2" firstAttribute="leading" secondItem="MWj-xA-MFN" secondAttribute="leading" constant="5" id="sDY-Fc-GjA"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Fe5-qG-RcR" secondAttribute="trailing" constant="5" id="wWo-Jr-RBx"/>
+                                                        <constraint firstItem="lR5-Ly-64z" firstAttribute="top" secondItem="Fe5-qG-RcR" secondAttribute="bottom" constant="5" id="wh6-D1-qyG"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
