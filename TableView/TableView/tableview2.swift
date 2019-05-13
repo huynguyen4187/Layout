@@ -12,9 +12,11 @@ import UIKit
 class Video{
     var detailvideo:UIImage
     var namevideo:String
+    var namechanel:String
     
-    init(detailvideo:UIImage,namevideo:String) {
+    init(detailvideo:UIImage,namevideo:String,namechanel:String) {
         self.detailvideo = detailvideo
         self.namevideo = namevideo
+        self.namechanel = namechanel
     }
 }

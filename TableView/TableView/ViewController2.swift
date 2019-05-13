@@ -19,9 +19,9 @@ class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSourc
     func createArray()->[Video]{
         var templateVideo : [Video] = []
         
-        let video1 = Video(detailvideo: #imageLiteral(resourceName: "co"), namevideo: "Hoàng hôn buông dần phai")
-        let video2 = Video(detailvideo: #imageLiteral(resourceName: "hoa"), namevideo: "Bông hoa tàn")
-        let video3 = Video(detailvideo: #imageLiteral(resourceName: "trang"), namevideo: "Hoa trắng tinh khôi")
+        let video1 = Video(detailvideo: #imageLiteral(resourceName: "co"), namevideo: "Hoàng hôn buông dần phai", namechanel: "VietNam Esport TV")
+        let video2 = Video(detailvideo: #imageLiteral(resourceName: "hoa"), namevideo: "Bông hoa tàn", namechanel: "Tinh tế")
+        let video3 = Video(detailvideo: #imageLiteral(resourceName: "trang"), namevideo: "Hoa trắng tinh khôi", namechanel: "Kênh 14 idaofsodhfuashguafhigiukhisaflhdsiafhiu")
         
         templateVideo.append(video1)
         templateVideo.append(video2)
