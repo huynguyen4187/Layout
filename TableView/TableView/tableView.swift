@@ -17,6 +17,7 @@ class tableView: UITableViewCell {
     func setVideo(video:VideoModel){
         myNameVideo.text = video.namevideo
         myNameChanel.text = video.namechanel
+        myVideo.image = video.detailvideo
     }
 
 }

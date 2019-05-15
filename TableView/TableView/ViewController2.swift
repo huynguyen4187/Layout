@@ -59,6 +59,9 @@ class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSourc
         cell.setVideo(video: video)
         return cell
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 155
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true

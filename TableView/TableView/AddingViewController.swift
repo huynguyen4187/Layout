@@ -32,7 +32,7 @@ class AddingViewController: UIViewController,UITextFieldDelegate,UIImagePickerCo
     
     @IBAction func addingvideo(_ sender: Any) {
         
-        let videoModel = VideoModel(namevideo: myTitleVideo.text!, namechanel: myNameChanel.text!)
+        let videoModel = VideoModel(namevideo: myTitleVideo.text!, namechanel: myNameChanel.text!,detailvideo : myVideo.image!)
         delegate.insertvideo(model: videoModel)
         
     }
