@@ -352,6 +352,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                 <real key="value" value="0.0"/>
@@ -362,13 +363,16 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYB-x5-Hwl">
-                                        <rect key="frame" x="62.5" y="92.5" width="250" height="241.5"/>
+                                        <rect key="frame" x="62.5" y="92.5" width="250" height="241"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBf-4J-gaH">
-                                                <rect key="frame" x="10" y="15" width="81.5" height="20"/>
+                                                <rect key="frame" x="10" y="15" width="82" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="HUE-EH-EAo"/>
                                                 </constraints>
@@ -417,21 +421,57 @@
                                                     <outlet property="delegate" destination="X2m-zE-Zrc" id="ncI-CH-zSB"/>
                                                 </connections>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9i-vG-lVQ">
+                                                <rect key="frame" x="10" y="120" width="44" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="REy-i5-VKw"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h6G-zB-4Gd">
+                                                <rect key="frame" x="115" y="85" width="125" height="120.5"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZT-qe-Tf7">
+                                                <rect key="frame" x="115" y="210.5" width="125" height="25.5"/>
+                                                <color key="backgroundColor" red="0.13021430370000001" green="0.71672540900000004" blue="0.78515726330000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Import"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onClickPickVideo:" destination="X2m-zE-Zrc" eventType="touchUpInside" id="05W-Gp-ew9"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="YAG-ey-ni3" firstAttribute="top" secondItem="FYB-x5-Hwl" secondAttribute="top" constant="10" id="2hz-T7-2ND"/>
                                             <constraint firstItem="jBf-4J-gaH" firstAttribute="centerY" secondItem="YAG-ey-ni3" secondAttribute="centerY" id="4MV-ds-DQZ"/>
+                                            <constraint firstAttribute="width" secondItem="FYB-x5-Hwl" secondAttribute="height" multiplier="250:241" id="8hl-Et-iBN"/>
                                             <constraint firstAttribute="trailing" secondItem="YAG-ey-ni3" secondAttribute="trailing" constant="10" id="Aqr-VB-DYA"/>
+                                            <constraint firstItem="h6G-zB-4Gd" firstAttribute="top" secondItem="eU9-XC-Izc" secondAttribute="bottom" constant="10" id="BzE-B1-VEa"/>
                                             <constraint firstItem="YRN-hc-1tM" firstAttribute="centerY" secondItem="eU9-XC-Izc" secondAttribute="centerY" id="CFR-w3-F54"/>
                                             <constraint firstItem="eU9-XC-Izc" firstAttribute="width" secondItem="YAG-ey-ni3" secondAttribute="width" id="Djs-cx-vM7"/>
+                                            <constraint firstItem="pZT-qe-Tf7" firstAttribute="top" secondItem="h6G-zB-4Gd" secondAttribute="bottom" constant="5" id="G63-zp-Xo9"/>
+                                            <constraint firstItem="h6G-zB-4Gd" firstAttribute="height" secondItem="FYB-x5-Hwl" secondAttribute="height" multiplier="1/2" id="Hmb-Lu-U9A"/>
+                                            <constraint firstItem="h6G-zB-4Gd" firstAttribute="width" secondItem="FYB-x5-Hwl" secondAttribute="width" multiplier="1/2" id="Q6s-FP-mWX"/>
+                                            <constraint firstItem="h6G-zB-4Gd" firstAttribute="leading" secondItem="N9i-vG-lVQ" secondAttribute="trailing" constant="61" id="Q99-2x-jUF"/>
+                                            <constraint firstItem="N9i-vG-lVQ" firstAttribute="leading" secondItem="YRN-hc-1tM" secondAttribute="leading" id="SBV-zD-fhX"/>
                                             <constraint firstItem="eU9-XC-Izc" firstAttribute="height" secondItem="YAG-ey-ni3" secondAttribute="height" id="TIT-tv-NNF"/>
+                                            <constraint firstAttribute="bottom" secondItem="pZT-qe-Tf7" secondAttribute="bottom" constant="5" id="avP-p2-P8N"/>
+                                            <constraint firstItem="pZT-qe-Tf7" firstAttribute="trailing" secondItem="h6G-zB-4Gd" secondAttribute="trailing" id="dJx-Af-CsH"/>
                                             <constraint firstItem="YRN-hc-1tM" firstAttribute="leading" secondItem="jBf-4J-gaH" secondAttribute="leading" id="jSp-U2-Eiw"/>
+                                            <constraint firstItem="N9i-vG-lVQ" firstAttribute="top" secondItem="YRN-hc-1tM" secondAttribute="bottom" constant="51" id="lV6-hu-pmC"/>
                                             <constraint firstItem="eU9-XC-Izc" firstAttribute="top" secondItem="YAG-ey-ni3" secondAttribute="bottom" constant="5" id="mqu-Ky-HMQ"/>
                                             <constraint firstItem="eU9-XC-Izc" firstAttribute="trailing" secondItem="YAG-ey-ni3" secondAttribute="trailing" id="of3-gG-hj0"/>
                                             <constraint firstItem="YAG-ey-ni3" firstAttribute="width" secondItem="FYB-x5-Hwl" secondAttribute="width" multiplier="1/2" id="rQL-oG-Wn8"/>
                                             <constraint firstItem="jBf-4J-gaH" firstAttribute="leading" secondItem="FYB-x5-Hwl" secondAttribute="leading" constant="10" id="v6N-D6-91F"/>
                                             <constraint firstItem="jBf-4J-gaH" firstAttribute="top" secondItem="FYB-x5-Hwl" secondAttribute="top" constant="15" id="zJq-TT-mxg"/>
+                                            <constraint firstItem="pZT-qe-Tf7" firstAttribute="leading" secondItem="h6G-zB-4Gd" secondAttribute="leading" id="zd9-D3-1Xb"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -449,7 +489,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vs3-9R-VEG">
-                                        <rect key="frame" x="146" y="354" width="83" height="30"/>
+                                        <rect key="frame" x="146" y="353.5" width="83" height="30"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Done"/>
@@ -461,10 +501,10 @@
                                                 <size key="value" width="1" height="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="2"/>
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="2"/>
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -476,7 +516,6 @@
                                 <constraints>
                                     <constraint firstItem="Vs3-9R-VEG" firstAttribute="width" secondItem="FYB-x5-Hwl" secondAttribute="width" multiplier="1/3" id="2IY-g6-Nw6"/>
                                     <constraint firstItem="ZxC-Mb-IZl" firstAttribute="centerX" secondItem="vrQ-g1-YZ4" secondAttribute="centerX" id="QWb-fK-bnR"/>
-                                    <constraint firstItem="FYB-x5-Hwl" firstAttribute="height" secondItem="vrQ-g1-YZ4" secondAttribute="height" multiplier="2/5" id="TSB-Qz-YQf"/>
                                     <constraint firstItem="FYB-x5-Hwl" firstAttribute="centerX" secondItem="vrQ-g1-YZ4" secondAttribute="centerX" id="UTc-gV-Sq8"/>
                                     <constraint firstItem="rde-QS-sk5" firstAttribute="centerX" secondItem="vrQ-g1-YZ4" secondAttribute="centerX" id="WiT-vu-vnR"/>
                                     <constraint firstItem="rde-QS-sk5" firstAttribute="width" secondItem="ZxC-Mb-IZl" secondAttribute="width" id="Xxz-np-62x"/>
@@ -504,6 +543,7 @@
                     <connections>
                         <outlet property="myNameChanel" destination="eU9-XC-Izc" id="S9U-iL-9J2"/>
                         <outlet property="myTitleVideo" destination="YAG-ey-ni3" id="f11-oD-GB8"/>
+                        <outlet property="myVideo" destination="h6G-zB-4Gd" id="VHk-nD-LpM"/>
                         <outlet property="myViewAdding" destination="FYB-x5-Hwl" id="aWg-KS-hjP"/>
                     </connections>
                 </viewController>

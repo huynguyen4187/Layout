@@ -13,18 +13,20 @@ protocol AddingProtocol {
     func insertvideo(model:VideoModel)
 }
 
-class AddingViewController: UIViewController,UITextFieldDelegate {
+class AddingViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     @IBOutlet weak var myTitleVideo: UITextField!
-    
     @IBOutlet weak var myNameChanel: UITextField!
+    @IBOutlet weak var myVideo: UIImageView!
+    
     var delegate:AddingProtocol!
+    var videopicker = UIImagePickerController()
     
     @IBOutlet weak var myViewAdding: UIView!
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        videopicker.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -39,4 +41,18 @@ class AddingViewController: UIViewController,UITextFieldDelegate {
         return true
     }
     
+    @IBAction func onClickPickVideo(_ sender: Any) {
+        videopicker.sourceType = .photoLibrary
+        videopicker.allowsEditing = true
+        present(videopicker, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            myVideo.image = image
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
+
+
