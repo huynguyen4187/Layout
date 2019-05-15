@@ -8,38 +8,49 @@
 
 import UIKit
 
-class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
-    
+class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSource,AddingProtocol {
 
     @IBOutlet weak var tableview2: UITableView!
+
+    var videos:[VideoModel]=[]
     
-    var videos:[Video]=[]
-    
-    func createArray()->[Video]{
-        var templateVideo : [Video] = []
-        
-        let video1 = Video(detailvideo: #imageLiteral(resourceName: "co"), namevideo: "Hoàng hôn buông dần phai", namechanel: "VietNam Esport TV")
-        let video2 = Video(detailvideo: #imageLiteral(resourceName: "hoa"), namevideo: "Bông hoa tàn", namechanel: "Tinh tế")
-        let video3 = Video(detailvideo: #imageLiteral(resourceName: "trang"), namevideo: "Hoa trắng tinh khôi", namechanel: "Kênh 14 idaofsodhfuashguafhigiukhisaflhdsiafhiu")
-        
-        templateVideo.append(video1)
-        templateVideo.append(video2)
-        templateVideo.append(video3)
-        
-        return templateVideo
-    }
+//    func createArray()->[Video]{
+//        var templateVideo : [Video] = []
+//        
+//        let video1 = Video(detailvideo: #imageLiteral(resourceName: "co"), namevideo: "Hoàng hôn buông dần phai", namechanel: "VietNam Esport TV")
+//        let video2 = Video(detailvideo: #imageLiteral(resourceName: "hoa"), namevideo: "Bông hoa tàn", namechanel: "Tinh tế")
+//        templateVideo.append(video1)
+//        templateVideo.append(video2)
+//        return templateVideo
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview2.dataSource = self
         tableview2.delegate = self
-        videos = createArray()
+//        videos = createArray()
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        self.view.isUserInteractionEnabled = true
     }
+
+    func insertvideo(model: VideoModel) {
+        videos.append(model)
+        let indexPath = IndexPath(row: videos.count-1, section: 0)
+        tableview2.beginUpdates()
+        tableview2.insertRows(at: [indexPath], with:  .automatic)
+        tableview2.endUpdates()
+    }
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gotoadding"{
+            let vc:AddingViewController = segue.destination as! AddingViewController
+            vc.delegate = self
+        }
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return videos.count
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 155
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,5 +58,13 @@ class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSourc
         let video = videos[indexPath.row]
         cell.setVideo(video: video)
         return cell
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
     }
 }

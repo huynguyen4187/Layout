@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4A184A8228A75840021C4AE /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A184A7228A75840021C4AE /* ViewController3.swift */; };
 		B4D7061722890D5600605F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D7061622890D5600605F84 /* AppDelegate.swift */; };
 		B4D7061922890D5700605F84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D7061822890D5700605F84 /* ViewController.swift */; };
 		B4D7061C22890D5700605F84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D7061A22890D5700605F84 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B4A184A7228A75840021C4AE /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		B4D7061322890D5600605F84 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D7061622890D5600605F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4D7061822890D5700605F84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				B4D7064422893F0000605F84 /* tableViewCell.swift */,
 				B4D706462289407000605F84 /* File.swift */,
 				B4D70648228945CA00605F84 /* ViewController2.swift */,
+				B4A184A7228A75840021C4AE /* ViewController3.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			files = (
 				B4D70649228945CA00605F84 /* ViewController2.swift in Sources */,
 				B4D7061922890D5700605F84 /* ViewController.swift in Sources */,
+				B4A184A8228A75840021C4AE /* ViewController3.swift in Sources */,
 				B4D706472289407000605F84 /* File.swift in Sources */,
 				B4D7061722890D5600605F84 /* AppDelegate.swift in Sources */,
 				B4D7064522893F0000605F84 /* tableViewCell.swift in Sources */,

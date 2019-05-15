@@ -12,10 +12,9 @@ class tableView: UITableViewCell {
 
     @IBOutlet weak var myVideo: UIImageView!
     @IBOutlet weak var myNameVideo: UILabel!
-    
     @IBOutlet weak var myNameChanel: UILabel!
-    func setVideo(video:Video){
-        myVideo.image = video.detailvideo
+    
+    func setVideo(video:VideoModel){
         myNameVideo.text = video.namevideo
         myNameChanel.text = video.namechanel
     }
