@@ -14,10 +14,14 @@ class VideoModel{
     var namevideo:String
     var namechanel:String
     var detailvideo:UIImage
-
-    init(namevideo:String,namechanel:String,detailvideo:UIImage) {
+    var status:UIImage
+    var detailstatus:String
+    
+    init(namevideo:String,namechanel:String,detailvideo:UIImage,status:UIImage,detailstatus:String) {
         self.namevideo = namevideo
         self.namechanel = namechanel
         self.detailvideo = detailvideo
+        self.status = status
+        self.detailstatus = detailstatus
     }
 }

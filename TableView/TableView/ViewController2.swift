@@ -8,26 +8,17 @@
 
 import UIKit
 
+
 class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSource,AddingProtocol {
 
     @IBOutlet weak var tableview2: UITableView!
 
     var videos:[VideoModel]=[]
     
-//    func createArray()->[Video]{
-//        var templateVideo : [Video] = []
-//        
-//        let video1 = Video(detailvideo: #imageLiteral(resourceName: "co"), namevideo: "Hoàng hôn buông dần phai", namechanel: "VietNam Esport TV")
-//        let video2 = Video(detailvideo: #imageLiteral(resourceName: "hoa"), namevideo: "Bông hoa tàn", namechanel: "Tinh tế")
-//        templateVideo.append(video1)
-//        templateVideo.append(video2)
-//        return templateVideo
-//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview2.dataSource = self
         tableview2.delegate = self
-//        videos = createArray()
         
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -61,6 +52,16 @@ class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSourc
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 155
+    }
+    
+    @available(iOS 11.0, *)
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+       
+        let delete = UIContextualAction(style: .destructive, title: "delete") { (action, view, nil) in
+            self.videos.remove(at: indexPath.row)
+            self.tableview2.reloadData()  
+        }
+        return UISwipeActionsConfiguration(actions: [delete])
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
