@@ -23,7 +23,7 @@ class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSourc
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         self.view.isUserInteractionEnabled = true
-        
+        fetch()
     }
 
     func insertvideo(model: VideoModel) {
@@ -63,6 +63,15 @@ class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSourc
             self.videos.remove(at: indexPath.row)
             self.tableview2.reloadData()  
         }
+        let realm = try! Realm()
+        let item = videos[indexPath.row]
+        do{
+            try realm.write {
+                realm.delete(item)
+            }
+        }catch{
+            print("error")
+        }
         return UISwipeActionsConfiguration(actions: [delete])
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -72,6 +81,15 @@ class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSourc
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.isHidden = false
+    }
+    
+    func fetch() {
+        let realm = try! Realm()
+        let AllItem = realm.objects(VideoModel.self)
+        for item in AllItem{
+            videos.append(item)
+            tableview2.reloadData()
+        }
     }
 }
 extension UIView {
