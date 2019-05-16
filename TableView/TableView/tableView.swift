@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 class tableView: UITableViewCell {
 
     @IBOutlet weak var myVideo: UIImageView!
@@ -17,11 +17,22 @@ class tableView: UITableViewCell {
     @IBOutlet weak var myDetailStatus: UILabel!
     
     func setVideo(video:VideoModel){
+        
+        
         myNameVideo.text = video.namevideo
         myNameChanel.text = video.namechanel
-        myVideo.image = video.detailvideo
-        myStatus.image = video.status
+        myVideo.image = UIImage.init(data: video.detailvideo)
+        
+        
+        if ( video.status) {
+            myStatus.image = UIImage.init(named: "Checked")
+        } else {
+            myStatus.image = nil
+        }
+        
         myDetailStatus.text = video.detailstatus
+        
+        
     }
 
 }

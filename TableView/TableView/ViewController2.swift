@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSource,AddingProtocol {
 
@@ -23,6 +23,7 @@ class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSourc
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         self.view.isUserInteractionEnabled = true
+        
     }
 
     func insertvideo(model: VideoModel) {
@@ -31,6 +32,7 @@ class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSourc
         tableview2.beginUpdates()
         tableview2.insertRows(at: [indexPath], with:  .automatic)
         tableview2.endUpdates()
+        
     }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

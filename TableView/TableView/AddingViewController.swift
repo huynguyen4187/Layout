@@ -7,20 +7,20 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 protocol AddingProtocol {
     func insertvideo(model:VideoModel)
 }
 
-class AddingViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class AddingViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
     @IBOutlet weak var myTitleVideo: UITextField!
     @IBOutlet weak var myNameChanel: UITextField!
     @IBOutlet weak var myVideo: UIImageView!
     @IBOutlet weak var btnStatus: UIButton!
     
-    var img:UIImage? = nil
+    
     var status:String? = nil
     var delegate:AddingProtocol!
     
@@ -35,8 +35,21 @@ class AddingViewController: UIViewController,UITextFieldDelegate,UIImagePickerCo
     
     @IBAction func addingvideo(_ sender: Any) {
         
-        let videoModel = VideoModel(namevideo: myTitleVideo.text!, namechanel: myNameChanel.text!,detailvideo : myVideo.image!,status : img!,detailstatus: status!)
+        let imageData:Data = myVideo.image!.jpegData(compressionQuality: 0.9)!
+        let videoModel = VideoModel(namevideo: myTitleVideo.text!, namechanel: myNameChanel.text!,detailvideo : imageData ,status : btnStatus.isSelected,detailstatus: status!)
         delegate.insertvideo(model: videoModel)
+        
+        //REALM add data
+        
+        let realm = try! Realm()
+        do{
+            try realm.write {
+                realm.add(videoModel)
+                print("Added")
+            }
+        }catch{
+            print("error")
+        }
          self.navigationController?.popViewController(animated: true)
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -61,12 +74,10 @@ class AddingViewController: UIViewController,UITextFieldDelegate,UIImagePickerCo
         let btn = sender as! UIButton
         btn.isSelected = !btn.isSelected
         if btn.isSelected {
-            img = UIImage(named: "checked")
             status = "Đã đăng ký"
         }
         else
         {
-            img = UIImage(named: "check")
             status = "Chưa đăng ký"
         }
     }
