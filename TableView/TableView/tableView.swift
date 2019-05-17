@@ -16,6 +16,7 @@ class tableView: UITableViewCell {
     @IBOutlet weak var myStatus: UIImageView!
     @IBOutlet weak var myDetailStatus: UILabel!
     
+    @IBOutlet weak var myLabelStatus: UILabel!
     func setVideo(video:VideoModel){
         
         
@@ -24,15 +25,15 @@ class tableView: UITableViewCell {
         myVideo.image = UIImage.init(data: video.detailvideo)
         
         
-        if ( video.status) {
+        if  video.status {
             myStatus.image = UIImage.init(named: "Checked")
+            myDetailStatus.text = "Đã đăng ký"
         } else {
             myStatus.image = nil
+            myDetailStatus.text = "Chưa đăng ký"
         }
-        
         myDetailStatus.text = video.detailstatus
-        
-        
+    
     }
 
 }

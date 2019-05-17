@@ -15,10 +15,10 @@
 		B403117D2285201500776133 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B403117B2285201500776133 /* LaunchScreen.storyboard */; };
 		B40311882285201500776133 /* TableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40311872285201500776133 /* TableViewTests.swift */; };
 		B40311932285201500776133 /* TableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40311922285201500776133 /* TableViewUITests.swift */; };
-		B426DF54228BF5E300DB5997 /* AddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426DF53228BF5E300DB5997 /* AddingViewController.swift */; };
 		B42E8B9922857FA5000CA587 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42E8B9822857FA5000CA587 /* ViewController2.swift */; };
 		B42E8B9B22858029000CA587 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42E8B9A22858029000CA587 /* VideoModel.swift */; };
 		B42E8B9D228581C1000CA587 /* tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42E8B9C228581C1000CA587 /* tableView.swift */; };
+		B468367C228EADF60076B513 /* AddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B468367B228EADF60076B513 /* AddingViewController.swift */; };
 		D909AD6691E8FF56E763A3CB /* Pods_TableViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE42596EC144F648072054E /* Pods_TableViewTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,10 +58,10 @@
 		B403118E2285201500776133 /* TableViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B40311922285201500776133 /* TableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUITests.swift; sourceTree = "<group>"; };
 		B40311942285201500776133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B426DF53228BF5E300DB5997 /* AddingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingViewController.swift; sourceTree = "<group>"; };
 		B42E8B9822857FA5000CA587 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		B42E8B9A22858029000CA587 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		B42E8B9C228581C1000CA587 /* tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableView.swift; sourceTree = "<group>"; };
+		B468367B228EADF60076B513 /* AddingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddingViewController.swift; path = ../../../../.Trash/AddingViewController.swift; sourceTree = "<group>"; };
 		E056EA74B4349C0F81E64E2C /* Pods_TableViewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TableViewUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D6806FDD93E38D731707CF /* Pods-TableViewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableViewUITests.release.xcconfig"; path = "Target Support Files/Pods-TableViewUITests/Pods-TableViewUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FC9353390118805B8A09FEAA /* Pods-TableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableView.debug.xcconfig"; path = "Target Support Files/Pods-TableView/Pods-TableView.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,7 +115,6 @@
 				4C602B2DA272441068FEF758 /* Pods-TableViewUITests.debug.xcconfig */,
 				E0D6806FDD93E38D731707CF /* Pods-TableViewUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,7 +151,7 @@
 				B42E8B9822857FA5000CA587 /* ViewController2.swift */,
 				B42E8B9A22858029000CA587 /* VideoModel.swift */,
 				B42E8B9C228581C1000CA587 /* tableView.swift */,
-				B426DF53228BF5E300DB5997 /* AddingViewController.swift */,
+				B468367B228EADF60076B513 /* AddingViewController.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -404,8 +403,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B42E8B9B22858029000CA587 /* VideoModel.swift in Sources */,
-				B426DF54228BF5E300DB5997 /* AddingViewController.swift in Sources */,
 				B42E8B9922857FA5000CA587 /* ViewController2.swift in Sources */,
+				B468367C228EADF60076B513 /* AddingViewController.swift in Sources */,
 				B42E8B9D228581C1000CA587 /* tableView.swift in Sources */,
 				B40311732285201200776133 /* AppDelegate.swift in Sources */,
 			);
@@ -586,7 +585,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6C99TY569A;
 				INFOPLIST_FILE = TableView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -606,7 +605,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6C99TY569A;
 				INFOPLIST_FILE = TableView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
