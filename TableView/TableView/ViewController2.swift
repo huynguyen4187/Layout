@@ -18,15 +18,9 @@ class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSourc
     @IBOutlet weak var tableview2: UITableView!
 
     var videos:[VideoModel]=[]
+    
     let realm = try! Realm()
-    
-    
-    
-    var array:[VideoModel]=[]
-    
-    
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +31,7 @@ class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSourc
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         self.view.isUserInteractionEnabled = true
         
-        fetch()
+      
     }
     
     //Hàm insert ở file AddingViewController
@@ -66,7 +60,6 @@ class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSourc
         let cell = tableview2.dequeueReusableCell(withIdentifier: "CELL",for : indexPath) as! tableView
         let video = videos[indexPath.row]
         cell.setVideo(video: video)
-        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -85,7 +78,6 @@ class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSourc
             do{
                 try self.realm.write {
                     self.realm.delete(item)
-                    
                 }
                 self.videos.remove(at: indexPath.row)
                 self.tableview2.reloadData()
@@ -106,10 +98,10 @@ class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSourc
         update.backgroundColor = UIColor.green
         return  UISwipeActionsConfiguration(actions: [update])
     }
-    @IBAction func Adding(_ sender: Any) {
-        let next:AddingViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddingViewController") as! AddingViewController
-        self.navigationController?.pushViewController(next, animated: true)
-    }
+//    @IBAction func Adding(_ sender: Any) {
+//        let next:AddingViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddingViewController") as! AddingViewController
+//        self.navigationController?.pushViewController(next, animated: true)
+//    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -123,19 +115,13 @@ class ViewController2: UIViewController,UITableViewDelegate,UITableViewDataSourc
     //
     //Lấy dữ liệu về
     func fetch() {
-        let realm = try! Realm()
+        videos.removeAll()
         let AllItem = realm.objects(VideoModel.self)
         for item in AllItem{
             videos.append(item)
-            tableview2.reloadData()
         }
+        tableview2.reloadData()
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.videos = [videos[indexPath.row]]
-    }
-    
-    
-    
 }
 extension UIView {
     

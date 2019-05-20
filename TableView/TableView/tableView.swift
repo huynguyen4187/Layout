@@ -15,8 +15,9 @@ class tableView: UITableViewCell {
     @IBOutlet weak var myNameChanel: UILabel!
     @IBOutlet weak var myStatus: UIImageView!
     @IBOutlet weak var myDetailStatus: UILabel!
-    
     @IBOutlet weak var myLabelStatus: UILabel!
+    
+    
     func setVideo(video:VideoModel){
         
         

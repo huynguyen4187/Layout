@@ -134,7 +134,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" image="add"/>
                                         <connections>
-                                            <action selector="Adding:" destination="If5-lB-Xqu" eventType="touchUpInside" id="6jL-dX-wGK"/>
+                                            <segue destination="X2m-zE-Zrc" kind="show" identifier="gotoadding" id="6Cr-ra-qK9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -322,7 +322,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vrQ-g1-YZ4">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZxC-Mb-IZl">
                                         <rect key="frame" x="69" y="23" width="276" height="30"/>
@@ -367,7 +367,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYB-x5-Hwl">
-                                        <rect key="frame" x="51.666666666666657" y="93" width="310.66666666666674" height="530"/>
+                                        <rect key="frame" x="51.666666666666657" y="93" width="310.66666666666674" height="486"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBf-4J-gaH">
                                                 <rect key="frame" x="10.000000000000007" y="15" width="118.66666666666669" height="20"/>
@@ -510,7 +510,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vs3-9R-VEG">
-                                        <rect key="frame" x="103.66666666666669" y="643" width="207" height="34"/>
+                                        <rect key="frame" x="103.66666666666669" y="599" width="207" height="34"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Done">
